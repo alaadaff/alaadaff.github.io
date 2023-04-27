@@ -20,7 +20,7 @@ Finally, we wanted to add focus on 2FA, that our initial search keywords didn't 
 We avoided quantitative presentation of our transcript data, since we don’t believe our qualitative methods support statistics that generalize. We’ll also revise to consider Reviewer-B’s suggestion about indicating when a discussion was initiated by a client or consultant.
 
 
-Novelty, impact of attacks & disclosure (Reviewers-C,D,E)
+### Novelty, impact of attacks & disclosure (Reviewers-C,D,E)
 
 Yes, the vulnerabilities underlying our spoofing attacks have been discussed in prior work (as we cite in Section(1)), but their impact on ASIs hasn’t been previously discussed in the literature. We’ll improve discussion about the impact of attacks in Section(6). 
 

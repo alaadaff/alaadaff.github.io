@@ -129,6 +129,11 @@ nav a:hover {
     margin-left: 28px; /* Aligns with paper title */
 }
 
+ul {
+    list-style-type: none; /* This removes the bullet points */
+    padding: 0; /* Remove the default left padding */
+}
+
 a {
     color: #2a7ae2;
     text-decoration: none

@@ -129,3 +129,27 @@ nav a:hover {
     margin-left: 28px; /* Aligns with paper title */
 }
 
+a {
+    color: #2a7ae2;
+    text-decoration: none
+}
+
+a:visited {
+    color: #1756a9
+}
+
+a:hover {
+    color: #111;
+    text-decoration: underline
+}
+
+.pub-info {
+    width: 100%
+}
+
+.pub-title {
+    font-weight: bold
+}
+
+
+

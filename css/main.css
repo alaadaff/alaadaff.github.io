@@ -17,6 +17,10 @@ h3 {
     text-align: center; /* Center the text horizontally */
 }
 
+h3 + h3 {
+    margin-top: 20px; /* Add space between consecutive h3s */
+}
+
 
 /* Header Styles */
 header {

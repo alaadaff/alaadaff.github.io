@@ -1,195 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alaa Daffalla - PhD Student</title>
-    <link rel="stylesheet" href="/css/main.css"> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alaa Daffalla - PhD Student</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      color: #333;
+      background: #fff;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 30px 20px;
+    }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      gap: 24px;
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 28px;
+    }
+    .tabs a {
+      font-size: 14px;
+      color: #888;
+      text-decoration: none;
+      padding-bottom: 8px;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      cursor: pointer;
+    }
+    .tabs a.active {
+      color: #222;
+      font-weight: 700;
+      border-bottom-color: #222;
+    }
+    .tabs a:hover {
+      color: #222;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+    .header img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .header h1 {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .header p {
+      font-size: 15px;
+      color: #555;
+    }
+    .header a {
+      color: #1772d0;
+      text-decoration: none;
+    }
+
+    /* Sections */
+    h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin: 28px 0 12px;
+      color: #222;
+    }
+    p.bio {
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+    a {
+      color: #1772d0;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Publications */
+    .pub {
+      margin-bottom: 16px;
+      padding: 16px 20px;
+      background: #e8e8e8;
+      border-radius: 6px;
+    }
+    .pub .pub-title {
+      font-size: 15px;
+      color: #1772d0;
+    }
+    .pub .pub-authors {
+      font-size: 14px;
+      color: #444;
+      line-height: 1.5;
+    }
+    .pub .pub-note {
+      font-size: 13px;
+      color: #777;
+      font-style: italic;
+    }
+    .pub .pub-venue {
+      font-size: 14px;
+      font-style: italic;
+      color: #555;
+    }
+    .pub .pub-award {
+      font-size: 14px;
+      font-weight: 700;
+      color: #333;
+    }
+    .pub .pub-links {
+      font-size: 13px;
+      margin-top: 2px;
+    }
+
+    /* Page content */
+    .page { display: none; }
+    .page.active { display: block; }
+
+    .placeholder {
+      color: #888;
+      font-size: 15px;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 600px) {
+      .header { flex-direction: column; text-align: center; }
+      .tabs { gap: 16px; }
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
 
+    <!-- Tabs -->
+    <div class="tabs">
+      <a class="active" onclick="showPage('home')">Home</a>
+      <a onclick="showPage('projects')">Projects</a>
+      <a onclick="showPage('talks')">Talks</a>
+      <a onclick="showPage('blog')">Blog</a>
+    </div>
 
+    <!-- Header (always visible) -->
+    <div class="header">
+      <div>
+        <h1>Alaa Daffalla</h1>
+        <p>PhD Student, Computer Science</p>
+        <p>Cornell University</p>
+        <p style="margin-top: 8px;"><a href="mailto:alaadaffalla@cs.cornell.edu">Contact</a></p>
+      </div>
+      <img src="https://alaadaff.github.io/css/headshott.jpeg" alt="Alaa Daffalla">
+    </div>
 
-    <!-- Profile Section -->
-<section id="profile">
-        <img src="../css/headshott.jpeg" alt="Alaa Daffalla's Profile Photo" class="profile-photo" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 3px solid #3C6EFA; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-        <h2>Alaa Daffalla</h2>
-        <p>PhD Student, Computer Science<br>Cornell University<br><a href="mailto:alaadaffalla@cs.cornell.edu">Contact</a></p>
-</section>
+    <!-- HOME -->
+    <div id="page-home" class="page active">
 
-    <!-- Biography Section -->
-  <section id="biography"> 
-        <h3>Biography</h3>
-        <div class="bio-interests">My name is Alaa Daffalla, and I'm a fourth-year PhD in Computer Science student at Cornell University advised by <a href="https://rist.tech.cornell.edu/" target="_blank">Thomas Ristenpart</a> and <a href="https://www.nixdell.com/" target="_blank">Nicola Dell</a>. I'm based in NYC at the <a href="https://tech.cornell.edu/" target="_blank">Cornell Tech</a> campus. 
-	I'm broadly interested in usable and applied security and privacy. More recently my research has focused on the detection of online tech abuse and designing new interventions for abuse mitigation and prevention.</div>
-  <!-- </section> --> 
-	<br>
-  <!-- </section id="pubs"> -->	
-        <h3>Publications</h3>
-	 <div id="pub-table"> 
+    <!--  <h3>Biography</h3> -->
+      <p class="bio">
+        My name is Alaa Daffalla, and I'm a fourth-year PhD in Computer Science student at Cornell University advised by
+        <a href="https://rist.tech.cornell.edu/">Thomas Ristenpart</a> and
+        <a href="https://www.nixdell.com/">Nicola Dell</a>.
+        I'm based in NYC at the <a href="https://tech.cornell.edu/">Cornell Tech</a> campus. I study the safety risks and harms resulting from emerging technologies. My work has investigated 
+		the <i>abusability</i> of account security management tools and passwordless authentication. More recently, I have been exploring emerging threats from generative AI, including its role in 
+		facilitating synthetic non-consensual intimate imagery (SNCII). My work also explores designing new interventions for abuse prevention and mitigation. 
+      </p>
+      <p class="bio">
+        To achieve this, I take a mixed-methods approach that combines measurement studies, user research, red teaming, and safety auditing.
+      </p>
 
-		<div class="pub-row">	 
-	
-		 <div class="pub-info">		
-					<div class="pub-title"><a href="" target="_blank"> A Safety Audit of Generative AI Mobile Apps </a></div>
-					<div class="pub-authors"><b>Alaa Daffalla</b>, Sarah Chao, Eric Zeng</div>
-			<div class="pub-venue"><i>In submission</i></div>
-			<!-- <div class="pub-links">
-									[ <a href="asi-measurement.pdf" target="_blank">pdf</a>
-									][ <a href="https://doi.org/10.5281/zenodo.18223588" target="_blank">artifact</a>
-						]
-			</div>    --> 
-		 </div> 		    
-		  
-		</div>	    
+      <h3>Publications</h3>
 
-		 
-		 
-		<div class="pub-row">	 
-	
-		 <div class="pub-info">		
-					<div class="pub-title"><a href="" target="_blank"> "Maybe there's only one passkey?": Challenges Investigating and Remediating Adversarial Passkeys </a></div>
-					<div class="pub-authors"><b>Alaa Daffalla</b>, Grace Myers, Thomas Ristenpart, Nicola Dell</div>
-			<div class="pub-venue"><i>In submission</i></div>
-			<!-- <div class="pub-links">
-									[ <a href="asi-measurement.pdf" target="_blank">pdf</a>
-									][ <a href="https://doi.org/10.5281/zenodo.18223588" target="_blank">artifact</a>
-						]
-			</div>    --> 
-		 </div> 		    
-		  
-		</div>	    
-		 
-		 
-		 <div class="pub-row">	 
-	
-		 <div class="pub-info">		
-					<div class="pub-title"><a href="" target="_blank"> Inconsistent, Incomplete, and Insecure: A survey of Account Security Interfaces </a></div>
-					<div class="pub-authors">Arka Bhattacharya, <b>Alaa Daffalla</b>, Kevin Lee, Rosanna Bellini, Nicola Dell, Thomas Ristenpart</div>
-			<div class="pub-venue">USENIX Security Symposium 2026</div>
-			<div class="pub-links">
-									[ <a href="asi-measurement.pdf" target="_blank">pdf</a>
-									][ <a href="https://doi.org/10.5281/zenodo.18223588" target="_blank">artifact</a>
-						]
-			</div>    
-		 </div> 		    
-		  
-		</div>	    
-		 
-		<div class="pub-row">	 
-	
-		 <div class="pub-info">		
-					<div class="pub-title"><a href="" target="_blank"> Passkeys in Interpersonal Threat Models: Abusability Analysis of Early Deployments</a></div>
-					<div class="pub-authors"><b>Alaa Daffalla</b>, Arka Bhattacharya, Jacob Wilder, Rahul Chatterjee, Nicola Dell, Rosanna Bellini, Thomas Ristenpart</div>
-			<div class="pub-venue">USENIX Security Symposium 2025</div>
-			<div class="pub-links">
-									[ <a href="passkey-framework.pdf" target="_blank">pdf</a>
-									][ <a href="https://doi.org/10.5281/zenodo.14745290" target="_blank">artifact</a>
-									]
-				                    [ <a href="https://news.cornell.edu/stories/2025/08/researchers-uncover-hidden-risks-passkeys-abusive-relationships" target="_blank">media</a>
-									  | <a href="https://www.sciencenews.org/article/domestic-abuse-human-trafficking-tech" target="_blank">other coverage</a>
-									]
-			</div>    
-		 </div> 		    
-		  
-		</div>	    
+      <div class="pub">
+        <a class="pub-title" href="#">A Safety Audit of Generative AI Mobile Apps</a><br>
+        <span class="pub-authors"><strong>Alaa Daffalla</strong>, Sarah Chao, Eric Zeng</span><br>
+        <span class="pub-venue">In submission</span>
+      </div>
 
-		<div class="pub-row"> 
-		<!-- <li> -->
-		     <div class="pub-info">		
-	                    <div class="pub-title"><a href="" target="_blank"> Encrypted Access Logging for Online Accounts: Device Attributions without Device Tracking</a></div>
-	                    <div class="pub-authors">Carolina O Perez*, <b>Alaa Daffalla*</b>, Thomas Ristenpart</div>
-			    <div class="co-first"><i>* co-first authors</i></div>	    
-			    <div class="pub-venue">USENIX Security Symposium 2025</div>
-			    <div class="pub-links">
-		                                [ <a href="access-logs.pdf" target="_blank">pdf</a>
-		                                ][ <a href="https://github.com/alaadaff/csal_code" target="_blank">code</a>
-			    						][ <a href="https://news.cornell.edu/stories/2025/08/login-system-helps-spot-online-hacks-without-sacrificing-privacy" target="_blank">media</a>
-										]
-			    </div>		     
-		     </div> 		    
-                <!-- </li> -->
-		</div>	
-		    
-                <div class="pub-row"> 
-		 <!-- <li> -->
-		     <div class="pub-info">		
-	                     <div class="pub-title"><a href="https://oaklandsok.github.io/papers/bellini2024.pdf" target="_blank">SoK: Safer Digital-Safety Research Involving At-Risk Users</a></div>
-	                     <div class="pub-authors">Rosanna Bellini, Emily Tseng, Noel Warford, <b>Alaa Daffalla</b>, Tara Matthews, Sunny Consolvo, Jill Woelfer, Patrick Gage Kelley, Michelle Mazurek, Dana Cuomo, Nicola Dell, and Thomas Ristenpart</div>
-			     <div class="pub-venue">IEEE Symposium on Security & Privacy (Oakland) 2024</div>
-			     <div class="pub-links">
-	                                    [ <a href="sok.pdf" target="_blank">pdf</a>
-	                                    ][ <a href="https://oaklandsok.github.io/papers/bellini2024.pdf" target="_blank">online</a>
-				      	    ]     
-			     </div>
-		     </div>     
-                <!-- </li> -->
-		</div>	
+      <div class="pub">
+        <a class="pub-title" href="#">"Maybe there's only one passkey?": Challenges Investigating and Remediating Adversarial Passkeys</a><br>
+        <span class="pub-authors"><strong>Alaa Daffalla</strong>, Grace Myers, Thomas Ristenpart, Nicola Dell</span><br>
+        <span class="pub-venue">USENIX Security Symposium 2026</span>
+      </div>
 
-		 <div class="pub-row">
-		 <!-- <li> -->
-		     <div class="pub-info">	
-	                     <div class="pub-title"><a href="https://www.usenix.org/conference/usenixsecurity23/presentation/daffalla" target="_blank">Account Security Interfaces: Important, Unintuitive, and Untrustworthy</a></div>
-	                     <div class="pub-authors"><b>Alaa Daffalla</b>, Marina Bohuk, Nicola Dell, Rosanna Bellini, and Thomas Ristenpart</div>
-			     <!-- <p style="color:red;"><em> Distinguished Paper Award </em></p>	-->
-			     <div class="pub-venue">USENIX Security Symposium 2023</div>
-		 	     <div class="pub-award">Distinguished Paper Award</div>
-			     <div class="pub-links">
-	                                    [ <a href="accountsecurity.pdf" target="_blank">pdf</a>
-	                                    ][ <a href="https://www.usenix.org/conference/usenixsecurity23/presentation/daffalla" target="_blank">online</a>
-				      	    ][ <a href="https://www.youtube.com/watch?v=rmQPLogpBu0&ab_channel=USENIX" target="_blank">video</a>
-                                            ][ <a href="https://www.usenix.org/conferences/best-papers?taxonomy_vocabulary_1_tid=2023&title_1=" target="_blank">award</a>
-				     ]
-			     </div>
-		     </div>	     
-                <!-- </li> -->
-		 </div>	 
+      <div class="pub">
+        <a class="pub-title" href="#">Inconsistent, Incomplete, and Insecure: A Survey of Account Security Interfaces</a><br>
+        <span class="pub-authors">Arka Bhattacharya, <strong>Alaa Daffalla</strong>, Kevin Lee, Rosanna Bellini, Nicola Dell, Thomas Ristenpart</span><br>
+        <span class="pub-venue">USENIX Security Symposium 2026</span><br>
+        <span class="pub-links">[ <a href="https://alaadaff.github.io/asi-measurement.pdf">pdf</a> ][ <a href="https://doi.org/10.5281/zenodo.18223588">artifact</a> ]</span>
+      </div>
 
-		 <div class="pub-row">
-		 <!-- <li> -->
-		   <div class="pub-info">	 
-	                   <div class="pub-title"><a href="https://www.computer.org/csdl/magazine/sp/2022/02/09656920/1zw1mZIHZGo" target="_blank">Defensive Technology Use by Political Activists During the Sudanese Revolution</a></div>
-	                   <div class="pub-authors"><b>Alaa Daffalla</b>, Lucy Simko, Tadayoshi Kohno and Alexandru G. Bardas</div>  
-			   <div class="pub-venue">IEEE Security & Privacy Magazine March-April 2022</div>
-			   <div class="pub-links">
-	                                    [ <a href="https://www.computer.org/csdl/magazine/sp/2022/02/09656920/1zw1mZIHZGo" target="_blank">online</a>
-				      	    ]
-			     </div>
-		   </div>	   
-                <!-- </li> -->
-		 </div>	 
+      <div class="pub">
+        <a class="pub-title" href="#">Passkeys in Interpersonal Threat Models: Abusability Analysis of Early Deployments</a><br>
+        <span class="pub-authors"><strong>Alaa Daffalla</strong>, Arka Bhattacharya, Jacob Wilder, Rahul Chatterjee, Nicola Dell, Rosanna Bellini, Thomas Ristenpart</span><br>
+        <span class="pub-venue">USENIX Security Symposium 2025</span><br>
+        <span class="pub-links">[ <a href="https://alaadaff.github.io/passkey-framework.pdf">pdf</a> ][ <a href="https://doi.org/10.5281/zenodo.14745290">artifact</a> ]</span><br>
+        <span class="pub-links">[ <a href="https://news.cornell.edu/stories/2025/08/researchers-uncover-hidden-risks-passkeys-abusive-relationships">media</a> | <a href="https://www.sciencenews.org/article/domestic-abuse-human-trafficking-tech">other coverage</a> ]</span>
+      </div>
 
-		 <div class="pub-row">
-		 <!-- <li> -->
-		   <div class="pub-info">	 
-	                   <div class="pub-title"><a href="https://ieeexplore.ieee.org/document/9519493" target="_blank">Defensive Technology Use by Political Activists During the Sudanese Revolution</a></div>
-	                   <div class="pub-authors"><b>Alaa Daffalla*</b>, Lucy Simko*, Tadayoshi Kohno and Alexandru G. Bardas</div>
-			   <div class="co-first"><i>* co-first authors</i></div>   
-			   <!--  <p style="color:red;"><em> NSA SoS Cybersecurity Paper Competition Honorable Mention </em></p> -->
-			   <div class="pub-venue">IEEE Symposium on Security & Privacy (Oakland) 2021</div>
-			   <div class="pub-award">NSA Best Scientific Cybersecurity Paper Competition Honorable Mention</div>
-			   <div class="pub-links">
-	                                    [ <a href="daffalla-simko-activism.pdf" target="_blank">pdf</a>
-	                                    ][ <a href="https://ieeexplore.ieee.org/document/9519493" target="_blank">online</a>
-				      	    ][ <a href="" target="_blank">video</a>
-                                            ][ <a href="https://www.sos-vo.org/node/92148#honorable" target="_blank">award</a>
-				   ]
-			     </div>
-		   </div>	   
-                <!-- </li> -->
-		 </div>	 
-		    
-            <!-- </ul> -->
-	    
-         </div>
-  </section>
+      <div class="pub">
+        <a class="pub-title" href="#">Encrypted Access Logging for Online Accounts: Device Attributions without Device Tracking</a><br>
+        <span class="pub-authors">Carolina O Perez*, <strong>Alaa Daffalla*</strong>, Thomas Ristenpart</span><br>
+        <span class="pub-note">*co-first authors</span><br>
+        <span class="pub-venue">USENIX Security Symposium 2025</span><br>
+        <span class="pub-links">[ <a href="https://alaadaff.github.io/access-logs.pdf">pdf</a> ][ <a href="https://github.com/alaadaff/csal_code">code</a> ][ <a href="https://news.cornell.edu/stories/2025/08/login-system-helps-spot-online-hacks-without-sacrificing-privacy">media</a> ]</span>
+      </div>
 
+      <div class="pub">
+        <a class="pub-title" href="https://oaklandsok.github.io/papers/bellini2024.pdf">SoK: Safer Digital-Safety Research Involving At-Risk Users</a><br>
+        <span class="pub-authors">Rosanna Bellini, Emily Tseng, Noel Warford, <strong>Alaa Daffalla</strong>, Tara Matthews, Sunny Consolvo, Jill Woelfer, Patrick Gage Kelley, Michelle Mazurek, Dana Cuomo, Nicola Dell, and Thomas Ristenpart</span><br>
+        <span class="pub-venue">IEEE Symposium on Security &amp; Privacy (Oakland) 2024</span><br>
+        <span class="pub-links">[ <a href="https://alaadaff.github.io/sok.pdf">pdf</a> ][ <a href="https://oaklandsok.github.io/papers/bellini2024.pdf">online</a> ]</span>
+      </div>
+
+      <div class="pub">
+        <a class="pub-title" href="https://www.usenix.org/conference/usenixsecurity23/presentation/daffalla">Account Security Interfaces: Important, Unintuitive, and Untrustworthy</a><br>
+        <span class="pub-authors"><strong>Alaa Daffalla</strong>, Marina Bohuk, Nicola Dell, Rosanna Bellini, and Thomas Ristenpart</span><br>
+        <span class="pub-venue">USENIX Security Symposium 2023</span><br>
+        <span class="pub-award">Distinguished Paper Award</span><br>
+        <span class="pub-links">[ <a href="https://alaadaff.github.io/accountsecurity.pdf">pdf</a> ][ <a href="https://www.usenix.org/conference/usenixsecurity23/presentation/daffalla">online</a> ][ <a href="https://www.youtube.com/watch?v=rmQPLogpBu0&ab_channel=USENIX">video</a> ][ <a href="https://www.usenix.org/conferences/best-papers?taxonomy_vocabulary_1_tid=2023&title_1=">award</a> ]</span>
+      </div>
+
+      <div class="pub">
+        <a class="pub-title" href="https://www.computer.org/csdl/magazine/sp/2022/02/09656920/1zw1mZIHZGo">Defensive Technology Use by Political Activists During the Sudanese Revolution</a><br>
+        <span class="pub-authors"><strong>Alaa Daffalla</strong>, Lucy Simko, Tadayoshi Kohno and Alexandru G. Bardas</span><br>
+        <span class="pub-venue">IEEE Security &amp; Privacy Magazine March-April 2022</span><br>
+        <span class="pub-links">[ <a href="https://www.computer.org/csdl/magazine/sp/2022/02/09656920/1zw1mZIHZGo">online</a> ]</span>
+      </div>
+
+      <div class="pub">
+        <a class="pub-title" href="https://ieeexplore.ieee.org/document/9519493">Defensive Technology Use by Political Activists During the Sudanese Revolution</a><br>
+        <span class="pub-authors"><strong>Alaa Daffalla*</strong>, Lucy Simko*, Tadayoshi Kohno and Alexandru G. Bardas</span><br>
+        <span class="pub-note">*co-first authors</span><br>
+        <span class="pub-venue">IEEE Symposium on Security &amp; Privacy (Oakland) 2021</span><br>
+        <span class="pub-award">NSA Best Scientific Cybersecurity Paper Competition Honorable Mention</span><br>
+        <span class="pub-links">[ <a href="https://alaadaff.github.io/daffalla-simko-activism.pdf">pdf</a> ][ <a href="https://ieeexplore.ieee.org/document/9519493">online</a> ][ <a href="#">video</a> ][ <a href="https://www.sos-vo.org/node/92148#honorable">award</a> ]</span>
+      </div>
+
+    </div>
+
+    <!-- PROJECTS -->
+    <div id="page-projects" class="page">
+      <h3>Projects</h3>
+      <p class="placeholder">Coming soon.</p>
+    </div>
+
+    <!-- TALKS -->
+    <div id="page-talks" class="page">
+      <h3>Talks</h3>
+      <p class="placeholder">Coming soon.</p>
+    </div>
+
+    <!-- BLOG -->
+    <div id="page-blog" class="page">
+      <h3>Blog</h3>
+      <p class="placeholder">Coming soon.</p>
+    </div>
+
+  </div>
+
+  <script>
+    function showPage(id) {
+      // Hide all pages
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      // Show selected
+      document.getElementById('page-' + id).classList.add('active');
+      // Update tab styling
+      document.querySelectorAll('.tabs a').forEach(a => a.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+  </script>
 </body>
-</html>
-
-		
-		
-		
-		
-	</body>
 </html>
